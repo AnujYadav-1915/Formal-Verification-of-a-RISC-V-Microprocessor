@@ -1,0 +1,7 @@
+GPU Tensor Core MAC Unit Verifier | Live | SystemVerilog, Python, VC Formal
+• Designed and formally verified a high-throughput Multiply-Accumulate (MAC) unit RTL tailored for deep learning
+acceleration and neural network SoCs, achieving 99.9% datapath precision.
+• Orchestrated formal equivalence and property checking to verify state machine transitions under highly constrained
+parallel execution edge cases, successfully uncovering 5 critical timing violations.
+• Programmed Python scripts to auto-generate 100+ targeted SVA bindings, streamlining the verification closure
+process and reducing manual coding overhead by 30%
