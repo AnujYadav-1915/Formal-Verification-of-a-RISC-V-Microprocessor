@@ -88,6 +88,10 @@ module rv32i_sva (
     // Default disable iff for reset
     default disable iff (!rst_n);
 
+    // Extract opcode from instruction for verification
+    logic [6:0] id_opcode;
+    assign id_opcode = id_instr[6:0];
+
     // =========================================================================
     // GROUP 1: Reset & System Initialization Properties (5 Assertions)
     // =========================================================================

@@ -1,0 +1,28 @@
+name: SystemVerilog Compilation CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  verilator_check:
+    name: Compile & Lint Check (Verilator)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install Verilator Compiler
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y verilator
+
+    - name: Run SystemVerilog Linting & Compilation
+      run: |
+        verilator --lint-only -Wall \
+          rtl/rv32i_core.sv \
+          tb/rv32i_sva.sv \
+          tb/rv32i_bind.sv
